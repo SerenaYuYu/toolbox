@@ -45,16 +45,8 @@
     text-align: center;
   }
 
-  header h1 {
-    font-size: 22px;
-    font-weight: 700;
-  }
-
-  header p {
-    font-size: 14px;
-    color: var(--sub);
-    margin-top: 4px;
-  }
+  header h1 { font-size: 22px; font-weight: 700; }
+  header p { font-size: 14px; color: var(--sub); margin-top: 4px; }
 
   main {
     padding: 20px 16px;
@@ -90,7 +82,6 @@
     text-decoration: none;
     color: var(--text);
     transition: opacity 0.15s;
-    cursor: pointer;
   }
 
   .tool:active { opacity: 0.6; }
@@ -107,26 +98,9 @@
   }
 
   .tool-info { flex: 1; min-width: 0; }
-
-  .tool-name {
-    font-size: 15px;
-    font-weight: 600;
-  }
-
-  .tool-desc {
-    font-size: 13px;
-    color: var(--sub);
-    margin-top: 2px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .tool-arrow {
-    color: var(--sub);
-    font-size: 18px;
-    flex-shrink: 0;
-  }
+  .tool-name { font-size: 15px; font-weight: 600; }
+  .tool-desc { font-size: 13px; color: var(--sub); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .tool-arrow { color: var(--sub); font-size: 18px; flex-shrink: 0; }
 
   .badge {
     font-size: 11px;
@@ -138,11 +112,72 @@
 
   .badge-blue { background: #e3f0ff; color: #007aff; }
   .badge-green { background: #e3f9e9; color: #34c759; }
+  .badge-purple { background: #f0eeff; color: #7c5cbf; }
 
   @media (prefers-color-scheme: dark) {
     .badge-blue { background: #1a3a5c; color: #0a84ff; }
     .badge-green { background: #1a3a2a; color: #30d158; }
+    .badge-purple { background: #2a1a4a; color: #a97fff; }
   }
+
+  .install-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 24px;
+  }
+
+  .install-top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .install-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #7c5cbf, #007aff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    flex-shrink: 0;
+  }
+
+  .install-title { font-size: 16px; font-weight: 700; }
+  .install-desc { font-size: 13px; color: var(--sub); margin-top: 3px; line-height: 1.4; }
+
+  .features {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+
+  .feature {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--sub);
+  }
+
+  .btn-install {
+    display: block;
+    background: var(--accent);
+    color: #fff;
+    padding: 13px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+
+  .btn-install:active { opacity: 0.7; }
 
   .hint {
     background: var(--card);
@@ -166,6 +201,23 @@
 
 <main>
 
+  <div class="section-title">捷徑</div>
+  <div class="install-card">
+    <div class="install-top">
+      <div class="install-icon">🧰</div>
+      <div>
+        <div class="install-title">工具箱捷徑</div>
+        <div class="install-desc">分享任何檔案時，選單裡出現工具箱選項</div>
+      </div>
+    </div>
+    <div class="features">
+      <div class="feature">📄 轉換為 Markdown</div>
+      <div class="feature">🌐 開啟工具箱</div>
+      <div class="feature">📋 複製文字內容</div>
+    </div>
+    <a class="btn-install" href="shortcut/toolbox.shortcut">安裝捷徑</a>
+  </div>
+
   <div class="section-title">文件轉換</div>
   <div class="tools">
     <a class="tool" href="https://serenayuyu.github.io/markitdown-mobile/" target="_blank">
@@ -186,7 +238,7 @@
         <div class="tool-name">AI 設定中心</div>
         <div class="tool-desc">Claude / ChatGPT 系統指令</div>
       </div>
-      <span class="badge badge-blue">GitHub</span>
+      <span class="badge badge-purple">GitHub</span>
     </a>
     <a class="tool" href="https://github.com/SerenaYuYu/markitdown-gui" target="_blank">
       <div class="tool-icon" style="background:#fff0e8;">🖥️</div>
@@ -198,13 +250,11 @@
     </a>
   </div>
 
-  <div class="section-title">關於這個工具箱</div>
   <div class="hint">
-    加入主畫面後像 App 一樣使用<br>
+    加入主畫面像 App 一樣使用<br>
     Safari → <strong>分享</strong> → <strong>加入主畫面</strong>
   </div>
 
 </main>
-
 </body>
 </html>
